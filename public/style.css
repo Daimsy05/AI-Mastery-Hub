@@ -1,0 +1,480 @@
+/* ============================================================
+   GLOBAL VARIABLES & RESET
+   ============================================================ */
+:root {
+  --bg: #050505;
+  --surface: #111111;
+  --primary: #00f0ff;
+  --secondary: #7000ff;
+  --text: #ffffff;
+  --text-muted: #a0a0a0;
+}
+
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+  font-family: 'Inter', sans-serif; 
+}
+
+body { 
+  background: var(--bg); 
+  color: var(--text); 
+  overflow-x: hidden; 
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.navbar {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  padding: 20px 5%; 
+  background: rgba(5, 5, 5, 0.8);
+  backdrop-filter: blur(10px); 
+  position: fixed; 
+  width: 100%; 
+  top: 0; 
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo { 
+  font-family: 'Space Grotesk', sans-serif; 
+  font-size: 1.5rem; 
+  font-weight: 800; 
+}
+
+.logo span { 
+  color: var(--primary); 
+}
+
+.nav-links a { 
+  color: var(--text); 
+  text-decoration: none; 
+  margin-left: 30px; 
+  font-weight: 600; 
+  transition: 0.3s; 
+}
+
+.nav-links a:hover { 
+  color: var(--primary); 
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.hero {
+  height: 100vh; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
+  text-align: center; 
+  padding: 0 20px; 
+  position: relative;
+}
+
+.hero-glow {
+  position: absolute; 
+  width: 500px; 
+  height: 500px;
+  background: var(--secondary); 
+  filter: blur(150px); 
+  opacity: 0.3; 
+  z-index: -1; 
+  top: 20%;
+}
+
+.hero h1 { 
+  font-size: 4rem; 
+  font-family: 'Space Grotesk', sans-serif; 
+  line-height: 1.1; 
+  margin-bottom: 20px; 
+}
+
+.hero p { 
+  font-size: 1.2rem; 
+  color: var(--text-muted); 
+  max-width: 600px; 
+  margin-bottom: 40px; 
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn-primary, .btn-buy, .btn-outline, .btn-crypto, .btn-mpesa, .btn-whatsapp {
+  padding: 14px 28px; 
+  border-radius: 8px; 
+  font-weight: 600; 
+  cursor: pointer;
+  transition: all 0.3s ease; 
+  border: none; 
+  text-decoration: none; 
+  display: inline-block;
+}
+
+.btn-primary { 
+  background: var(--primary); 
+  color: #000; 
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4); 
+}
+
+.btn-primary:hover { 
+  box-shadow: 0 0 40px rgba(0, 240, 255, 0.8); 
+  transform: translateY(-2px); 
+}
+
+/* ============================================================
+   BENTO GRID (COURSES)
+   ============================================================ */
+.section { 
+  padding: 100px 5%; 
+}
+
+.section-title { 
+  font-size: 2.5rem; 
+  margin-bottom: 50px; 
+  text-align: center; 
+  font-family: 'Space Grotesk', sans-serif; 
+}
+
+.bento-grid {
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr); /* Forces exactly 4 columns */
+  gap: 20px;
+}
+
+.card {
+  background: var(--surface); 
+  border: 1px solid rgba(255,255,255,0.1); 
+  border-radius: 16px;
+  padding: 24px; /* Reduced padding for better fit */
+  transition: 0.3s; 
+  cursor: pointer; 
+  position: relative; 
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover { 
+  border-color: var(--primary); 
+  box-shadow: 0 10px 30px rgba(0, 240, 255, 0.1); 
+  transform: translateY(-5px); 
+}
+
+.card h3 { 
+  font-size: 1.4rem; 
+  margin-bottom: 10px; 
+  color: var(--primary); 
+}
+
+.card .price { 
+  font-size: 2.5rem; 
+  font-weight: 800; 
+  margin-bottom: 20px; 
+  font-family: 'Space Grotesk', sans-serif; 
+}
+
+.card ul { 
+  list-style: none; 
+  margin-bottom: 30px; 
+  flex-grow: 1;
+}
+
+.card ul li { 
+  margin-bottom: 12px; 
+  color: var(--text-muted); 
+  font-size: 0.85rem; 
+  line-height: 1.4; 
+}
+
+.btn-buy { 
+  width: 100%; 
+  background: rgba(255,255,255,0.05); 
+  color: #fff; 
+  border: 1px solid rgba(255,255,255,0.2); 
+  margin-top: auto;
+}
+
+.card:hover .btn-buy { 
+  background: var(--primary); 
+  color: #000; 
+  border-color: var(--primary); 
+}
+
+/* Card Highlights */
+.card.highlight { 
+  border-color: var(--secondary); 
+}
+
+.card.highlight h3 { 
+  color: #d4aaff; 
+}
+
+.card.highlight:hover { 
+  box-shadow: 0 10px 30px rgba(112, 0, 255, 0.2); 
+  border-color: #d4aaff; 
+}
+
+.card.ultimate { 
+  background: linear-gradient(135deg, rgba(112, 0, 255, 0.1), transparent); 
+  border-color: #d4aaff; 
+}
+
+/* ============================================================
+   TOOLS GRID
+   ============================================================ */
+.dark-section { 
+  background: #0a0a0a; 
+}
+
+.tools-grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 20px; 
+}
+
+.tool-card { 
+  background: var(--surface); 
+  padding: 25px; 
+  border-radius: 12px; 
+  border: 1px solid rgba(255,255,255,0.05); 
+}
+
+.tool-card h4 { 
+  font-size: 1.2rem; 
+  margin-bottom: 10px; 
+}
+
+.tool-card p { 
+  color: var(--text-muted); 
+  font-size: 0.9rem; 
+  margin-bottom: 20px; 
+}
+
+.tool-price { 
+  font-size: 1.8rem; 
+  font-weight: 800; 
+  color: var(--primary); 
+  margin-bottom: 20px; 
+}
+
+.tool-price span { 
+  font-size: 1rem; 
+  color: var(--text-muted); 
+  font-weight: 400; 
+}
+
+.btn-outline { 
+  width: 100%; 
+  background: transparent; 
+  border: 1px solid var(--primary); 
+  color: var(--primary); 
+  margin-bottom: 10px; 
+}
+
+.btn-outline:hover { 
+  background: var(--primary); 
+  color: #000; 
+}
+
+/* ============================================================
+   CHECKOUT MODAL
+   ============================================================ */
+.modal { 
+  display: none; 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background: rgba(0,0,0,0.8); 
+  z-index: 1000; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.modal-content { 
+  background: var(--surface); 
+  padding: 40px; 
+  border-radius: 16px; 
+  width: 100%; 
+  max-width: 400px; 
+  border: 1px solid var(--primary); 
+  position: relative; 
+}
+
+.close { 
+  position: absolute; 
+  top: 15px; 
+  right: 20px; 
+  font-size: 2rem; 
+  cursor: pointer; 
+  color: var(--text-muted); 
+}
+
+.form-group { 
+  margin: 20px 0; 
+}
+
+.form-group label { 
+  display: block; 
+  margin-bottom: 10px; 
+  color: var(--text-muted); 
+  font-size: 0.9rem; 
+}
+
+.form-group input { 
+  width: 100%; 
+  padding: 12px; 
+  border-radius: 8px; 
+  background: #000; 
+  border: 1px solid #333; 
+  color: #fff; 
+  outline: none; 
+}
+
+.form-group input:focus { 
+  border-color: var(--primary); 
+}
+
+.payment-options { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 10px; 
+}
+
+.btn-crypto { 
+  background: #f7931a; 
+  color: #fff; 
+}
+
+.btn-mpesa { 
+  background: #4CAF50; 
+  color: #fff; 
+}
+
+.btn-crypto:hover, .btn-mpesa:hover { 
+  opacity: 0.9; 
+}
+
+/* ============================================================
+   CONTACT SECTION
+   ============================================================ */
+.contact-section { 
+  text-align: center; 
+}
+
+.contact-section h2 { 
+  font-size: 2.5rem; 
+  margin-bottom: 20px; 
+}
+
+.btn-whatsapp { 
+  background: #25D366; 
+  color: #fff; 
+  margin-top: 20px; 
+  font-size: 1.1rem; 
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer { 
+  background: #000; 
+  border-top: 1px solid rgba(255,255,255,0.05); 
+  padding: 80px 5% 30px; 
+}
+
+.footer-grid { 
+  display: grid; 
+  grid-template-columns: 2fr 1fr 1fr 1.5fr; 
+  gap: 40px; 
+  margin-bottom: 60px; 
+}
+
+.footer-brand .logo { 
+  font-size: 1.5rem; 
+  margin-bottom: 15px; 
+  display: inline-block; 
+  font-family: 'Space Grotesk', sans-serif; 
+  font-weight: 800;
+}
+
+.footer-brand p { 
+  color: var(--text-muted); 
+  font-size: 0.9rem; 
+  line-height: 1.6; 
+  max-width: 300px; 
+}
+
+.footer-links h4, 
+.footer-contact h4 { 
+  font-size: 1.1rem; 
+  margin-bottom: 20px; 
+  color: #fff; 
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.footer-links a { 
+  display: block; 
+  color: var(--text-muted); 
+  text-decoration: none; 
+  margin-bottom: 12px; 
+  font-size: 0.9rem; 
+  transition: 0.3s; 
+}
+
+.footer-links a:hover { 
+  color: var(--primary); 
+  transform: translateX(5px);
+}
+
+.footer-bottom { 
+  border-top: 1px solid rgba(255,255,255,0.05); 
+  padding-top: 25px; 
+  text-align: center; 
+  color: var(--text-muted); 
+  font-size: 0.85rem; 
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN (TABLETS & PHONES)
+   ============================================================ */
+@media (max-width: 1100px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr); /* Drop to 2 columns on tablets */
+  }
+  .footer-grid { 
+    grid-template-columns: 1fr 1fr; 
+  }
+}
+
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr; /* Drop to 1 column on phones */
+  }
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  .nav-links {
+    display: none; /* Hide links on mobile for simplicity */
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-grid { 
+    grid-template-columns: 1fr; 
+    text-align: center; 
+    gap: 40px;
+  }
+  .footer-brand p { 
+    margin: 0 auto; 
+  }
+  .footer-links a:hover {
+    transform: none;
+  }
+}
