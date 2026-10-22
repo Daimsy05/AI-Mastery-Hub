@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Mastery Hub | Premium AI Training & Digital Tools</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">AI<span>Mastery</span>Hub</div>
+  <div class="nav-links">
+    <a href="#courses">Courses</a>
+    <a href="#tools">Digital Tools</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<header class="hero">
+  <div class="hero-glow"></div>
+  <h1>Master AI Training.<br>Scale Your Income.</h1>
+  <p>The ultimate platform to learn AI tasking, get verified accounts, and access premium digital tools.</p>
+  <a href="#courses" class="btn-primary">View Packages</a>
+</header>
+
+<!-- COURSES SECTION (Bento Grid) -->
+<section id="courses" class="section">
+  <h2 class="section-title">AI Training Packages</h2>
+  
+  <div class="bento-grid">
+    
+    <!-- Package 1 -->
+    <div class="card" onclick="openCheckout('Package 1: Refresher', 15)">
+      <h3>Refresher Course</h3>
+      <div class="price">$15</div>
+      <ul>
+        <li>✓ Learn how to task in AI platforms</li>
+      </ul>
+      <button class="btn-buy">Purchase</button>
+    </div>
+
+    <!-- Package 2 -->
+    <div class="card" onclick="openCheckout('Package 2: Account Basics', 25)">
+      <h3>Account Basics</h3>
+      <div class="price">$25</div>
+      <ul>
+        <li>✓ Basics of creating AI training accounts</li>
+        <li>✓ Learn how to task on AI training accounts</li>
+      </ul>
+      <button class="btn-buy">Purchase</button>
+    </div>
+
+    <!-- Package 3 -->
+    <div class="card highlight" onclick="openCheckout('Package 3: Pro Tasker', 50)">
+      <h3>Pro Tasker</h3>
+      <div class="price">$50</div>
+      <ul>
+        <li>✓ Basics of AI training</li>
+        <li>✓ Learn how to task on various accounts</li>
+        <li>✓ Handle different AI training assessments</li>
+        <li>✓ Access to AI training materials</li>
+      </ul>
+      <button class="btn-buy">Purchase</button>
+    </div>
+
+    <!-- Package 4 -->
+    <div class="card ultimate" onclick="openCheckout('Package 4: Elite Mastery', 150)">
+      <h3>Elite Mastery</h3>
+      <div class="price">$150</div>
+      <ul>
+        <li>✓ Basics of AI training</li>
+        <li>✓ Learn about high paying AI training platforms</li>
+        <li>✓ Learn how to create AI training accounts</li>
+        <li>✓ Learn tasking basics in different platforms</li>
+        <li>✓ Handle assessments in all AI platforms</li>
+        <li>✓ Get access to AI training accounts to start tasking</li>
+        <li>✓ Access to AI training materials</li>
+      </ul>
+      <button class="btn-buy">Purchase</button>
+    </div>
+  </div>
+</section>
+
+<!-- DIGITAL TOOLS SECTION -->
+<section id="tools" class="section dark-section">
+  <h2 class="section-title">Premium Digital Tools</h2>
+  
+  <div class="tools-grid">
+    <div class="tool-card">
+      <h4>OTP Numbers</h4>
+      <p>Instant verification codes for global platforms.</p>
+      <div class="tool-price">$2.50 <span>/ OTP</span></div>
+      <button class="btn-outline" onclick="openCheckout('OTP Number', 2.50)">Buy Now</button>
+    </div>
+
+    <div class="tool-card">
+      <h4>Call Numbers</h4>
+      <p>Virtual numbers for receiving calls and SMS.</p>
+      <div class="tool-price">$5.00 <span>/ month</span></div>
+      <button class="btn-outline" onclick="openCheckout('Call Number', 5)">Buy Now</button>
+    </div>
+
+    <div class="tool-card">
+      <h4>High-Quality Proxies</h4>
+      <p>Residential proxies optimized for AI tasking.</p>
+      <div class="tool-price">$3.00 <span>/ week</span></div>
+      <button class="btn-outline" onclick="openCheckout('Proxy (1 Week)', 3)">Buy 1 Week</button>
+      <button class="btn-outline" onclick="openCheckout('Proxy (1 Month)', 10)">Buy 1 Month - $10</button>
+    </div>
+
+    <div class="tool-card">
+      <h4>CV Writing Service</h4>
+      <p>High-quality CV optimized for AI platform applications.</p>
+      <div class="tool-price">$3.00 <span>/ CV</span></div>
+      <button class="btn-outline" onclick="openCheckout('AI Platform CV', 3)">Buy Now</button>
+    </div>
+  </div>
+</section>
+
+<!-- CHECKOUT MODAL -->
+<div id="checkoutModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeCheckout()">&times;</span>
+    <h2>Complete Your Order</h2>
+    <p id="checkoutItemName" style="color: var(--text-muted); margin-top: 5px;"></p>
+    <h3 id="checkoutPrice" style="color: var(--primary); font-size: 2rem; margin-bottom: 20px;"></h3>
+    
+    <div class="form-group">
+      <label>Email Address (For Crypto Receipt)</label>
+      <input type="email" id="checkoutEmail" placeholder="you@example.com">
+    </div>
+
+    <div class="payment-options">
+      <button class="btn-crypto" onclick="payWithCrypto()">Pay with Crypto</button>
+      <button class="btn-mpesa" onclick="payWithMpesa()">Pay with M-Pesa (KE)</button>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="section contact-section">
+  <h2>Need Help?</h2>
+  <p>Contact our support team directly on WhatsApp.</p>
+  <a href="https://wa.me/254108776970" target="_blank" class="btn-whatsapp">Chat on WhatsApp</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">AI<span>Mastery</span>Hub</div>
+      <p>The ultimate platform to learn AI tasking, get verified accounts, and access premium digital tools. Scale your income today.</p>
+    </div>
+    
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="#courses">Training Packages</a>
+      <a href="#tools">Digital Tools</a>
+      <a href="#contact">Contact Support</a>
+    </div>
+    
+    <div class="footer-links">
+      <h4>Legal</h4>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Refund Policy</a>
+    </div>
+    
+    <div class="footer-contact">
+      <h4>Get in Touch</h4>
+      <a href="https://wa.me/254108776970" target="_blank" class="btn-outline" style="text-align:center; margin-top: 10px;">WhatsApp Us</a>
+      <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 15px; text-align: center;">Available Mon-Fri<br>9:00 AM - 6:00 PM</p>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> AI Mastery Hub. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- TAWK.TO LIVE CHAT -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6ad8a256a03d3a34b7a7c556/1k5fd4rh0'; // Replace if needed
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
+<script src="app.js"></script>
+</body>
+</html>
