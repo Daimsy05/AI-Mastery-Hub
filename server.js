@@ -52,8 +52,8 @@ app.post('/api/pay/crypto', async (req, res) => {
       order_id: orderId,
       order_description: itemName,
       // Change to your live domain later
-      success_url: `http://localhost:3000/?payment=success&orderId=${orderId}`,
-      cancel_url: `http://localhost:3000/`
+      success_url: `https://ai-mastery-hub-o18y.onrender.com/?payment=success&orderId=${orderId}`,
+      cancel_url: `https://ai-mastery-hub-o18y.onrender.com/`
     }, {
       headers: { 'x-api-key': process.env.NOWPAYMENTS_API_KEY }
     });
